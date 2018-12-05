@@ -22,6 +22,7 @@
     "jquery": "^3.3.1",
     "mongoose": "^5.3.14",
     "morgan": "^1.9.1",
+    "pg": "^7.7.1",
     "popper.js": "^1.14.6"
   },
   "description": "My Blog",
