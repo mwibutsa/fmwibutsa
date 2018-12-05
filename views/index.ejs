@@ -1,11 +1,19 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<%- include("header",{title,posts})%>
+	<div id="home-header">
+		<h1>Welcome!</h1>
+	</div>
+	<div>
+		<h1 class="text-center">Blog Posts</h1>
+		<hr>
+		<div class="posts">
+			<% posts.forEach((post)=>{ %>
+				<a href=<%= "/posts/:"+post.id%>><h4 class="post-title"><%=  post.title%></h4></a>
+				<p><%= post.body %></p>
+				<hr>
+			<% }); %>
+			
+
+		</div>
+	</div>
+
+<% include footer%>

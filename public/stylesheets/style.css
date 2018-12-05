@@ -1,8 +1,159 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Raleway', sans-serif;
+  padding: 0;
+  margin: 0;
 }
-
+hr{
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
 a {
   color: #00B7FF;
+
+
+}
+.text-center{
+	text-align: center;
+}
+#top-header{
+	text-align: center;
+}
+h1{
+	font-size: 50px;
+}
+#footer{
+	height: 100px;
+	width: 100%;
+	background: #44BBB6;
+	color: white;
+	text-align: center;
+
+}
+#nav ul{
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+#nav ul li{
+	display:inline-block;
+	box-shadow: 1px 2px 8px #bbb;
+	text-align: center;
+	list-style: none;
+	border-radius: 3px;
+	margin: 5px;
+	padding-left:10px;
+	padding-right: 10px;
+	background: #fff;
+}
+#nav ul li a{
+	font-size: 1.4em;
+	text-decoration: none;
+	height: 40px;
+	line-height: 40px;
+}
+#nav ul li:hover{
+	background: #00B7FF;
+
+}
+#nav ul li:hover a{
+	background: #00B7FF;
+	color: white;
+
+}
+#nav ul li a:hover{
+	color: white;
+}
+#nav {
+	position: sticky;
+	top: 0;
+	background-color:#fff;
+	position: relative;
+	width: 700px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#home-header{
+	min-height: 400px;
+	background-image: url('../images/homeheader.jpg');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: 100%;
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 0;
+	margin-bottom: 10px;
+	color: white;
+	text-align: center;
+}
+#wrapper{
+}
+#home-header h1{
+	font-size: 40px;
+	text-align: center;
+}
+label{
+	display: block;
+}
+textarea{
+	min-height: 200px;
+
+}
+button{
+	background:#00B7FF;
+	color: white;
+	border-radius: 4px;
+	box-shadow: 1px 2px 4px #aaa;
+	height: 30px;
+	border: none;
+	font-weight: bold;
+	font-size: 18px;
+}
+button:hover{
+	background-color: #0d8682eb
+}
+
+.text-input{
+	height: 24px;
+	padding: 4px;
+}
+.text-input,textarea{
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 16px;
+	color: #333;
+	border: 2px solid #aaa;
+	border-radius: 4px;
+}
+textarea:hover,textarea:focus,.text-input:hover,.text-input:focus{
+	border: 2px solid #00B7FF;
+}
+
+form{
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+.posts{
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+.posts p{
+	margin-left: 20px;
+}
+.posts .post-title{
+	text-decoration: underline;
+}
+.post-title:hover{
+	cursor: pointer;
+	color: rgb(133, 203, 228);
+}
+.posts hr{
+	width: 90%;
+	margin: 0;
+	opacity: 0.3;
 }
