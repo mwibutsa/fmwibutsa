@@ -29,7 +29,7 @@ app.use(express.static(path.join(__dirname, 'node_modules/popper.js/dist')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/new-post',newPostRouter);
-app.use('/posts/:post_id',postsRouter);
+app.use('/posts',postsRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

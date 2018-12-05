@@ -7,7 +7,7 @@
 		<hr>
 		<div class="posts">
 			<% posts.forEach((post)=>{ %>
-				<a href=<%= "/posts/:"+post.id%>><h4 class="post-title"><%=  post.title%></h4></a>
+				<a href=<%= "/posts/"+post.id%>><h4 class="post-title"><%=  post.title%></h4></a>
 				<p><%= post.body %></p>
 				<hr>
 			<% }); %>
