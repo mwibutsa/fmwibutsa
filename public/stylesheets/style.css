@@ -20,8 +20,15 @@ a {
 	text-align: center;
 }
 h1{
-	font-size: 50px;
+	font-size: 40px;
 }
+h2{
+	font-size: 30px;
+}
+h3{
+	font-size: 20px;
+}
+
 #footer{
 	height: 100px;
 	width: 100%;
@@ -33,18 +40,26 @@ h1{
 #nav ul{
 	padding: 0;
 	margin: 0;
-	position: relative;
 }
 #nav ul li{
-	display:inline-block;
+	float: left;
 	box-shadow: 1px 2px 8px #bbb;
 	text-align: center;
-	list-style: none;
+	list-style-type: none;
 	border-radius: 3px;
-	margin: 5px;
-	padding-left:10px;
-	padding-right: 10px;
+	width: 150px;
+	margin-left: 4px;
+	height: 40px;
+	line-height: 40px;
+	margin-right: 5px;
 	background: #fff;
+}
+#nav ul li ul li{
+	display: none;
+	margin:0;
+}
+#nav ul li:hover ul li{
+	display: block;
 }
 #nav ul li a{
 	font-size: 1.4em;
@@ -54,24 +69,39 @@ h1{
 }
 #nav ul li:hover{
 	background: #00B7FF;
+	color: white;
 
+}
+#nav ul li:hover ul li{
+	display: block;
 }
 #nav ul li:hover a{
-	background: #00B7FF;
 	color: white;
-
 }
-#nav ul li a:hover{
+#nav ul li:hover ul li a{
+	color: #00B7FF;
+}
+#nav ul li ul li:hover a{
 	color: white;
+}
+#nav-container{
+	position: sticky;
+	width: 100%;
+	top: 0;
+	margin-bottom: 1%;
+	background-color:white;
+	min-height: 40px;
+
 }
 #nav {
 	position: sticky;
 	top: 0;
 	background-color:#fff;
 	position: relative;
-	width: 700px;
+	width: 800px;
 	margin-right: auto;
 	margin-left: auto;
+	height: 40px;
 }
 #home-header{
 	min-height: 400px;
