@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect("mongodb://localhost:27017",{ useNewUrlParser: true } )
+mongoose.connect("mongodb://localhost:27017/mwibutsa",{ useNewUrlParser: true } )
 var UserSchema = new mongoose.Schema({
 	firstname:{
 		type:String,

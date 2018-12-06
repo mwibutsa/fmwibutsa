@@ -1,0 +1,20 @@
+<%-include('header',{title}) %>
+<div>
+    <h1 class="text-center">Create a new account</h1>
+    <form method="post" action="/account/new-account">
+
+        <label>Firstname:</label><br>
+        <input type="text" name="firstname" placeholder="firstname" class="text-input"><br><br>
+        <label>Lastname:</label><br>
+        <input type="text" name="lastname" placeholder="lastname" class="text-input"><br><br>
+        <label>Email:</label><br>
+        <input type="text" name="email" placeholder="email" class="text-input"><br><br>
+        <label>Password:</label><br>
+        <input type="text" name="password" placeholder="password" class="text-input"><br><br>
+        <label>Confirm password:</label><br>
+        <input type="text" name="cpassword" placeholder="Confirm Password" class="text-input"><br><br>
+        <label>Password:</label><br>
+        <button type="submit">Add post</button>
+    </form>
+</div>
+<%include footer %>

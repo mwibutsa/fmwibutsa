@@ -1,0 +1,13 @@
+<%- include('header',{title}) %>
+<div>
+<h1 class="text-center">Log into your account</h1>
+<form method="post" action="/account/login">
+
+    <label>Username:</label><br>
+    <input type="email" name="username" placeholder="username" class="text-input"><br><br>
+    <label>Password:</label><br>
+    <input type="password" name="password" placeholder="password" class="text-input"><br><br>
+    <button type="submit">Add post</button>
+</form>
+</div>
+<%include footer %>
