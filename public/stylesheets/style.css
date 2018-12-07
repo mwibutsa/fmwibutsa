@@ -126,15 +126,21 @@ label{
 	display: block;
 }
 textarea{
-	min-height: 200px;
 
+}
+.post-body{
+	background: rgb(255, 255, 255);
+	border: 1px solid rgb(253, 246, 246);
+	text-align: justify;
+	padding: 20px;
+	font-size: 16px;
 }
 button{
 	background:#00B7FF;
 	color: white;
 	border-radius: 4px;
 	box-shadow: 1px 2px 4px #aaa;
-	height: 30px;
+	height: 40px;
 	border: none;
 	font-weight: bold;
 	font-size: 18px;
@@ -146,6 +152,13 @@ button:hover{
 .text-input{
 	height: 24px;
 	padding: 4px;
+}
+.text{
+	font-size: 16px;
+	color: #333;
+	border: 2px solid #aaa;
+	border-radius: 4px;
+	width: 150px;
 }
 .text-input,textarea{
 	width: 90%;
@@ -193,4 +206,51 @@ form{
 	margin-right: auto;
 	padding: 10px;
 	text-align: justify;
+}
+.page-grid{
+	display: grid;
+	grid-template-columns: 70%,30%;
+	grid-template-areas: "posts sidebar";
+	grid-column-gap: 10px;
+	width: 100%;
+
+}
+.posts{
+	grid-area: "posts";
+	width: 70%;
+
+}
+.sidebar{
+	grid-area: "sidebar";
+	width: 300px;
+	right: 0;
+}
+.sidebar input{
+	height: 30px;
+	border-radius: 3px;
+	border: 2px solid #bbb;
+
+}
+.search-box{
+	border: 2px solid #00B7FF;
+	height: 50px;
+	padding: 0;
+	padding-top: 10px;
+	text-align: justify;
+}
+.card{
+	border: 2px solid #00B7FF;
+	border-radius: 5px;
+	padding: 1%;
+	width: 95%;
+	margin: 1%;
+}
+ol li a{
+	text-decoration: none;
+}
+ol li{
+	text-decoration: underline;
+	font-size: 16px;
+	list-style-image: -webkit-radial-gradient(#00B7FF,#aaa,#333);
+	margin-bottom: 5px;
 }

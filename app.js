@@ -7,6 +7,22 @@ var newPostRouter = require('./routes/new-post');
 var expressSession = require('express-session');
 var fileUpload = require('express-fileupload');
 var authenticate = require('./middleware/authenticate');
+var session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
+const mongoose = require('mongoose');
+mongoose.connect("mongodb://localhost:27017/mwibutsa",{ useNewUrlParser: true });
+
+
+var app = express();
+
+app.use(session({
+  store: new MongoStore({ mongooseConnection: mongoose.connection,autoRemove: 'interval',
+  autoRemoveInterval: 1 }),
+  resave:false,
+  saveUninitialized:false,
+  secret:"_@!((^"
+}));
+
 
 
 var indexRouter = require('./routes/index');
@@ -17,9 +33,6 @@ var signUpRouter = require('./routes/account/sign-up');
 var contactRouter =  require('./routes/contact');
 var aboutRouter = require('./routes/about');
 
-
-var app = express();
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -27,10 +40,6 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(expressSession({
-  secret:"_@1!9(9)6^%"
-}))
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules/bootstrap/dist')));
 app.use(express.static(path.join(__dirname, 'node_modules/jquery/dist')));
