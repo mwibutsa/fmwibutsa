@@ -4,7 +4,12 @@ var bodyParser = require('body-parser');
 var Post = require('../databases/post-collection');
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.render('new-post',{title:'new post'});
+  if(req.session.userId){
+	res.render('new-post',{title:'new post'});
+  }
+  else{
+	  res.render('login',{title:'Mwibutsa | login'});
+  }
 });
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended:false}));

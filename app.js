@@ -4,6 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var newPostRouter = require('./routes/new-post');
+var expressSession = require('express-session');
+var fileUpload = require('express-fileupload');
+var authenticate = require('./middleware/authenticate');
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -24,6 +28,9 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(expressSession({
+  secret:"_@1!9(9)6^%"
+}))
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules/bootstrap/dist')));
 app.use(express.static(path.join(__dirname, 'node_modules/jquery/dist')));
@@ -32,7 +39,7 @@ app.use(express.static(path.join(__dirname, 'node_modules/popper.js/dist')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/new-post',newPostRouter);
+app.use('/new-post',authenticate,newPostRouter);
 app.use('/posts',postsRouter);
 app.use('/account/login',loginRouter);
 app.use('/account/new-account',signUpRouter);

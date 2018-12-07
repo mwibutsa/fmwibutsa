@@ -5,7 +5,7 @@ var Posts = require('../databases/post-collection');
 router.get('/',  async (req, res) =>{
 
   const posts = await Posts.find({});
-res.render('index', { title: 'Mwibutsa | Home',posts });
+res.render('index', { title: 'Home',posts });
 });
 
 module.exports = router;
