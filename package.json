@@ -1,16 +1,19 @@
 {
   "name": "fmwibutsa",
   "version": "0.0.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "start": "node ./bin/www"
   },
-  "engines": "nodejs",
+  "engines": {
+    "node": "10.x"
+  },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "bootstrap": "^4.1.3",
+    "connect-flash": "^0.1.1",
     "connect-mongo": "^2.0.2",
     "cookie-parser": "^1.4.3",
     "debug": "~2.6.9",
@@ -47,7 +50,7 @@
     "graphics",
     "design"
   ],
-  "author": "mwibutsa floribert",
+  "author": "Mwibutsa Floribert",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mwibutsa/fmwibutsa/issues"

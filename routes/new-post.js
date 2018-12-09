@@ -11,15 +11,16 @@ router.use(session({
 }))
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-	res.render('new-post',{title:'new post'});
+	res.render('new-post',{title:'New post'});
 });
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended:false}));
 router.post('/',(req,res)=>{
 	var posted = {
 		title:req.body.title,
-		body:req.body.content
-	}
+		body:req.body.content,
+		user_id:req.session.userId
+	};
 	var postData = new Post(posted);
 	console.log(postData);
 	postData.save();

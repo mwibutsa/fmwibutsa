@@ -1,8 +1,20 @@
-<%-include("header",{title}) %>
+<%-include("header",{title,loggedIn}) %>
 <h1 class="text-center">Contact-us</h1><hr>
-<div class="text-center">
+<div>
+    <div class="text-center">
     <strong>Email:</strong><em><a href="mailto:fmwibutsa@gmail.com">fmwibutsa@gmail.com</a></em><br><br>
     <strong>Tel:</strong><em>+250787740316 / +250722551522</em>
+    </div>
+    <form method="post" action="/new-post">
+
+        <label>Name</label>
+        <input type="text" name="name" placeholder="Full name" class="text-input">
+        <label>Email</label>
+        <input type="text" name="email" placeholder="Enter your email" class="text-input">
+        <label>Message</label>
+        <textarea name="content"  placeholder="Post content"></textarea><br>
+        <button type="submit">Send</button>
+    </form>
     
 </div>
 <% include footer %>

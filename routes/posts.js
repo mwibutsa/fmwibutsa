@@ -11,5 +11,8 @@ router.get('/:post_id', async (req, res, next)=> {
   res.render('post',{title:'blog-post',post});
   
 });
+router.get('/:post_id', (req, res) => {
+  
+});
 
 module.exports = router;

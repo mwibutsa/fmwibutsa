@@ -3,11 +3,6 @@ body {
   padding: 0;
   margin: 0;
 }
-hr{
-	width: 80%;
-	margin-left: auto;
-	margin-right: auto;
-}
 a {
   color: #00B7FF;
 
@@ -70,7 +65,6 @@ h3{
 #nav ul li:hover{
 	background: #00B7FF;
 	color: white;
-
 }
 #nav ul li:hover ul li{
 	display: block;
@@ -88,7 +82,7 @@ h3{
 	position: sticky;
 	width: 100%;
 	top: 0;
-	margin-bottom: 1%;
+	margin-bottom: 0;
 	background-color:white;
 	min-height: 40px;
 
@@ -102,6 +96,7 @@ h3{
 	margin-right: auto;
 	margin-left: auto;
 	height: 40px;
+	z-index: 10;
 }
 #home-header{
 	min-height: 400px;
@@ -116,8 +111,6 @@ h3{
 	color: white;
 	text-align: center;
 }
-#wrapper{
-}
 #home-header h1{
 	font-size: 40px;
 	text-align: center;
@@ -126,7 +119,7 @@ label{
 	display: block;
 }
 textarea{
-
+height: 100px;
 }
 .post-body{
 	background: rgb(255, 255, 255);
@@ -139,14 +132,15 @@ button{
 	background:#00B7FF;
 	color: white;
 	border-radius: 4px;
-	box-shadow: 1px 2px 4px #aaa;
+	box-shadow: 1px 4px 8px #aaa;
 	height: 40px;
 	border: none;
 	font-weight: bold;
 	font-size: 18px;
 }
 button:hover{
-	background-color: #0d8682eb
+	background-color: #0d8682eb;
+	transition: box-shadow .44s ease-in-out;
 }
 
 .text-input{
@@ -161,9 +155,6 @@ button:hover{
 	width: 150px;
 }
 .text-input,textarea{
-	width: 90%;
-	margin-left: auto;
-	margin-right: auto;
 	font-size: 16px;
 	color: #333;
 	border: 2px solid #aaa;
@@ -180,25 +171,29 @@ form{
 
 }
 .posts{
-	width: 90%;
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
-}
-.posts p{
-	margin-left: 20px;
+	width: 80%;
+	text-align: justify;
+	padding: 10%;
+	padding-top: 10px;
 }
 .posts .post-title{
 	text-decoration: underline;
 }
 .post-title:hover{
 	cursor: pointer;
-	color: rgb(133, 203, 228);
+	color: rgb(15, 56, 71);
+}
+hr{
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
 }
 .posts hr{
-	width: 90%;
+	width: 100%;
 	margin: 0;
-	opacity: 0.3;
+	opacity: 0.2;
+	z-index: -1;
+	position: relative;
 }
 .center-justify{
 	width: 80%;
@@ -209,21 +204,22 @@ form{
 }
 .page-grid{
 	display: grid;
-	grid-template-columns: 70%,30%;
+	grid-template-columns: 1fr,300px;
 	grid-template-areas: "posts sidebar";
-	grid-column-gap: 10px;
-	width: 100%;
+	padding: 10px;
+	margin: 0;
 
 }
 .posts{
 	grid-area: "posts";
-	width: 70%;
-
+	border: 1px solid #aaa;
+	justify-self: center;
+	clear: both;
 }
 .sidebar{
 	grid-area: "sidebar";
 	width: 300px;
-	right: 0;
+	justify-self: end;
 }
 .sidebar input{
 	height: 30px;
@@ -242,7 +238,6 @@ form{
 	border: 2px solid #00B7FF;
 	border-radius: 5px;
 	padding: 1%;
-	width: 95%;
 	margin: 1%;
 }
 ol li a{
@@ -253,4 +248,7 @@ ol li{
 	font-size: 16px;
 	list-style-image: -webkit-radial-gradient(#00B7FF,#aaa,#333);
 	margin-bottom: 5px;
+}
+.footer{
+	margin-top: 1%;
 }

@@ -1,17 +1,18 @@
-<%- include("header",{title}) %>
+<%- include("header",{title,loggedIn}) %>
     <div class="page-grid">
-        <div>
-        <h2><%= post.title %></h2>
-        <p class="post-body"><%= post.body %></p>
-        <div class="comment">
-            <div class="comment-form">
-                <form method="post" action="/posts/comment">
-                    <textarea rows="2" cols="10"></textarea>
-                    <button type="submit">Comment</button>
-                </form>
+        <div class="posts">
+            <h2><%= post.title %></h2>
+            <p class="post-body"><%= post.body %></p>
+            <hr>
+            <div class="comment">
+                <div class="comment-form">
+                    <form method="post" action=<%= "/posts/"+post.id%>>
+                        <textarea rows="2" cols="10"></textarea>
+                        <button type="submit">Comment</button>
+                    </form>
+                </div>
             </div>
         </div>
-        </div>
-        <%include sidebar %>
+        <% include sidebar %>
     </div>
 <% include footer %>

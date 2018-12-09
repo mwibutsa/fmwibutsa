@@ -12,7 +12,8 @@ var UserSchema = new mongoose.Schema({
 	},
 	email:{
 		type:String,
-		required:[true,"Please fill the email field"]
+		required:[true,"Please fill the email field"],
+		unique:true
 	},
 	password:{
 		type:String,

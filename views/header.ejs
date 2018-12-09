@@ -4,9 +4,6 @@
 	<head>
 
 		<title>Mwibutsa | <%= title %></title>
-		<!--<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-		<script src="/js/bootstrap.min.js"></script>
-		<script src="/popper.min.js"></script> -->
 		<script src="/jquery.min.js"></script>
 		<script src="/javascripts/custom-script.js"></script>
 		<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
@@ -26,8 +23,14 @@
 						<li><a href="/contact-us">Contact</a></li>
 						<li><a href="#">Account</a>
 							<ul>
+								<% if(loggedIn){%>
+								<li><a href="/account/logout">Logout</a></li>
+								<li><a href="/account/profile">Profile</a></li>
+								<% }%>
+								<% if(!loggedIn){%>
 								<li><a href="/account/login">Login</a></li>
 								<li><a href="/account/new-account">Sign up</a></li>
+								<%}%>
 							</ul>
 						</li>
 					</ul>
