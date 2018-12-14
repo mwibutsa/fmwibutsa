@@ -2,6 +2,7 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var logger = require('morgan');
+var connectFlash = require('connect-flash');
 var newPostRouter = require('./routes/new-post');
 var fileUpload = require('express-fileupload');
 var authenticate = require('./middleware/redirect-if-logged-in');
@@ -12,10 +13,12 @@ mongoose.connect("mongodb://localhost:27017/mwibutsa",{ useNewUrlParser: true })
 var session = require('express-session');
 var skipLogin = require('./middleware/redirect-if-logged-in');
 var auth = require('./routes/account/auth');
+var contactSuccessRouter = require('./routes/contact-success');
+
+
 
 
 var app = express();
-
 app.use(session({
   store: new MongoStore({ mongooseConnection: mongoose.connection,autoRemove: 'interval',
   autoRemoveInterval: 1 }),
@@ -23,7 +26,8 @@ app.use(session({
   saveUninitialized:false,
   secret:"_@!((^"
 }));
-
+app.use(connectFlash());
+app.use(fileUpload());
 // IMPORTING ROUTES
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -56,6 +60,7 @@ app.use('/account/login',loginStatus,skipLogin,loginRouter);
 app.use('/account/new-account',loginStatus,signUpRouter);
 app.use('/contact-us',loginStatus,contactRouter);
 app.use('/about-us',loginStatus,aboutRouter);
+app.use('/contact-success',loginStatus,contactSuccessRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

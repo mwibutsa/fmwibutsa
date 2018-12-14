@@ -2,11 +2,6 @@ var express = require('express');
 var router = express.Router();
 var UserCollection = require('../../databases/user-collection');
 
-/* GET users listing. */
-
-router.get('/', function(req, res, next) {
-  res.render('sign-up',{title:'New Account',errors:req.session.registrationErrors});
-});
 router.post('/', (req, res) => {
     if(req.body.password === req.body.cpassword)
     {    
@@ -19,21 +14,21 @@ router.post('/', (req, res) => {
         newUser = new UserCollection(userDetails);
     newUser.save((error,user)=>{
         if(error){
-          req.session.registrationErrors =   Object.keys(error.errors).map((key)=>{
+          registrationErrors = Object.keys(error.errors).map((key)=>{
                 var errorCOmponent = {
                     errorField : error.errors[key].path,
                     errorMessage: error.errors[key].message
-                }
+                };
                 return errorCOmponent;
             });
+            req.flash('registrationErrors',registrationErrors);
+            console.log('==============New Errors======================');
+            console.log(req.flash('registrationErrors'));
             console.log('====================================');
-            console.log(req.session.registrationErrors);
-            console.log('====================================');
-            return  res.redirect('/account/new-account');
+            res.render('sign-up',{title:'New Account',errors:req.flash('registrationErrors')});
         }
         else{
-            req.session.registrationErrors = null;
-            res.redirect('/');
+            return res.redirect('/');
         }
     });
     }
@@ -42,5 +37,12 @@ router.post('/', (req, res) => {
 
 
 });
+router.get('/', function(req, res, next) {
+  res.render('sign-up',{title:'New Account',errors:req.flash('registrationErrors')});
+  console.log('==============HHHHHH ERRRRORS======================');
+  console.log(req.flash('registrationErrors'));
+  console.log('====================================');
+});
+
 
 module.exports = router;

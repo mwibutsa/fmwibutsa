@@ -16,9 +16,23 @@ router.get('/', function(req, res, next) {
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended:false}));
 router.post('/',(req,res)=>{
+	if (req.files) {
+		var file = req.files.postfile,
+		fileName = file.name;
+		file.mv('./public/postfiles/'+fileName,(error)=>{
+			if (error) {
+				console.log(error);
+				fileName = '';
+			}
+			else{
+				fileName = '.public/postfiles/'+fileName;
+			}
+		})
+	}
 	var posted = {
 		title:req.body.title,
 		body:req.body.content,
+		file:fileName,
 		user_id:req.session.userId
 	};
 	var postData = new Post(posted);

@@ -119,7 +119,8 @@ label{
 	display: block;
 }
 textarea{
-height: 100px;
+min-height: 100px;
+width: 100%;
 }
 .post-body{
 	background: rgb(255, 255, 255);
@@ -127,6 +128,10 @@ height: 100px;
 	text-align: justify;
 	padding: 20px;
 	font-size: 16px;
+}
+.text-input{
+	min-width: 300px;
+	width: 100%;
 }
 button{
 	background:#00B7FF;
@@ -251,4 +256,29 @@ ol li{
 }
 .footer{
 	margin-top: 1%;
+}
+.post-file{
+	width: 100%;
+}
+.post-file img{
+	width: 100%;
+	height: 200px;
+}
+.comments{
+	background: rgb(247, 241, 241);
+	padding: 1%;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 5%;
+}
+.comments p{
+	background-color: rgb(253, 253, 253);
+	padding: 1%;
+	border-radius: 20%;
+	text-align: center;
+	margin:10px;
+}
+.single img{
+	height: 100%;
 }

@@ -9,7 +9,8 @@ var PostSchema = new mongoose.Schema({
 	type:String
 },
 	file:{
-	type:String
+	type:String,
+	default:''
 },
 createdOn:{
 	type:Date,

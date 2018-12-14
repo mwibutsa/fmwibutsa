@@ -8,7 +8,13 @@
 		<div class="page-grid">
 			<div class="posts">
 			<% posts.forEach((post)=>{ %>
-				<a href=<%= "/posts/"+post.id%>><h4 class="post-title"><%=  post.title%></h4></a>
+				<a href=<%= "/posts/"+post.id%>>
+				<h4 class="post-title"><%=  post.title%></h4></a>
+				<%if(post.file){%>
+				<div class="post-file">
+					<img src="<%= "/postfiles/"+post.file%>" alt="">
+				</div>
+				<%}%>
 				<p><%= post.body %></p>
 				<hr>
 			<% }); %>

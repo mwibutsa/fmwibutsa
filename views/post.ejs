@@ -2,12 +2,29 @@
     <div class="page-grid">
         <div class="posts">
             <h2><%= post.title %></h2>
+                    <%if(post.file){%>
+                <div class="post-file single">
+                    <img src="<%= "/postfiles/"+post.file%>" alt="">
+                </div>
+                <%}%>
             <p class="post-body"><%= post.body %></p>
+            <div class="comments"><h4>(<%= comments.length%>)Comments</h4>
+                <% if(comments.length){%>
+            <% comments.forEach((aComment)=>{ %>
+            <p><%= aComment.comment %></p>
+            <hr>
+        <% }); %>
+        <%}%>
+        <% if(!comments.length){%>
+            <p>Be the first one to comment on this post!</p>
+        <%}%>
+                
+            </div>
             <hr>
             <div class="comment">
                 <div class="comment-form">
                     <form method="post" action=<%= "/posts/"+post.id%>>
-                        <textarea rows="2" cols="10"></textarea>
+                        <textarea rows="2" cols="10" class="text-input" name="comment"></textarea>
                         <button type="submit">Comment</button>
                     </form>
                 </div>

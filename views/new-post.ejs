@@ -2,10 +2,12 @@
 
 	<div>
 		<h1 class="text-center">Create a new blog post</h1>
-		<form method="post" action="/new-post">
+		<form method="post" action="/new-post" enctype="multipart/form-data">
 
 			<label>Title</label>
 			<input type="text" name="title" placeholder="Post title" class="text-input">
+			<label>Post File</label>
+			<input type="file" name="postfile" class="text-input">
 			<label>Content</label>
 			<textarea name="content"  placeholder="Post content"></textarea><br>
 			<button type="submit">Add post</button>
