@@ -24,14 +24,7 @@ h3{
 	font-size: 20px;
 }
 
-#footer{
-	height: 100px;
-	width: 100%;
-	background: #44BBB6;
-	color: white;
-	text-align: center;
 
-}
 #nav ul{
 	padding: 0;
 	margin: 0;
@@ -281,4 +274,25 @@ ol li{
 }
 .single img{
 	height: 100%;
+}
+html,body{
+	height: 100%;
+}
+.wrapper{
+	min-height: 100%;
+}
+.main{
+	min-height: 100%;
+	padding-bottom: 150px;
+}
+#footer{
+	width: 100%;
+	background: #44BBB6;
+	color: white;
+	text-align: center;
+	margin-top: -120px;
+	height: 120px;
+	position: relative;
+	clear: both;
+	bottom: 0;
 }
