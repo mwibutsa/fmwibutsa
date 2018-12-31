@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var ContactCollection = require('../databases/contact-collection');
 var nodeMailer = require('nodemailer');
-var transport = nodeMailer.createTransport({
+var transport = nodeMailer.createTransport('SMTP',{
 	service:'gmail',
 	auth:{
 		user:'mflohost@gmail.com',
@@ -36,7 +36,7 @@ router.post('/',(req,res)=>{
 		to:req.body.email,
 		subject:req.body.name,
 		text:req.body.message,
-		html:'<a href="www.onartstudio.com">Visit our website</a>'
+		html:`${req.body.message}<br><a href="www.onartstudio.com">Visit our website</a>`
 	};
 	transport.sendMail(mailOption,(error,info)=>{
 		if(error){
