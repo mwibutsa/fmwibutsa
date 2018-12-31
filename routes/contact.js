@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var ContactCollection = require('../databases/contact-collection');
 var nodeMailer = require('nodemailer');
-var transport = nodeMailer.createTransport('SMTP',{
+var transport = nodeMailer.createTransport({
 	service:'gmail',
 	auth:{
 		user:'mflohost@gmail.com',
