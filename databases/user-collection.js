@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
-mongoose.connect("mongodb://localhost:27017/mwibutsa",{ useNewUrlParser: true } )
+mongoose.connect("mongodb://fmwibutsa:Mwibutsa6991@ds145704.mlab.com:45704/mwibutsa");
 var UserSchema = new mongoose.Schema({
 	firstname:{
 		type:String,
