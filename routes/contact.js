@@ -35,7 +35,6 @@ router.post('/',(req,res)=>{
 		from:'mflohost@gmail.com',
 		to:req.body.email,
 		subject:req.body.name,
-		text:req.body.message,
 		html:`${req.body.message}<br><a href="www.onartstudio.com">Visit our website</a>`
 	};
 	transport.sendMail(mailOption,(error,info)=>{
